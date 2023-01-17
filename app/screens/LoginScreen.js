@@ -21,21 +21,20 @@ export default function LoginScreen() {
     const handleSubmit = () => {
         Keyboard.dismiss()
         handleValidation()
-        if(handleValidation()){
-            console.log(data)
-        }
+        // if(){
+        //     console.log(data)
+        // }
     }
 
     const handleValidation = () => {
         if(data.password.trim() === '' || data.password.trim().length < 6) {
             setPasswordError('The password is too short')
-            return false
+            
         }
         if(data.email.trim() === '') {
             setEmailError('Please enter a valid email address')
-            return false
+            
         }
-        return true
     }
 
   return (
@@ -50,7 +49,7 @@ export default function LoginScreen() {
             backgroundColor: '#ffeeee'
         }]}>
             <View style={content}>
-                <Text style={textPrimary}>Welcome back,</Text>
+                <Text style={textPrimary}>Welcome back to EDoctorUG,</Text>
                 <Text style={ text }>Please login.</Text>
 
                 {emailError && <Text style={textDanger}>{ emailError }</Text>}

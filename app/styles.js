@@ -22,7 +22,7 @@ export default StyleSheet.create({
         backgroundColor: colors.bgPrimary,
         padding: 10,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
 
     content: {
