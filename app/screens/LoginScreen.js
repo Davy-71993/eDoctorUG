@@ -10,6 +10,7 @@ import {
 } from 'react-native'
 import React, { useState } from 'react'
 import stylesheet, { colors } from '../styles.js'
+import Container from '../Components/Container'
 
 export default function LoginScreen() {
     const { textPrimary, content, input, container, text, button, textDanger } = stylesheet
@@ -21,9 +22,7 @@ export default function LoginScreen() {
     const handleSubmit = () => {
         Keyboard.dismiss()
         handleValidation()
-        // if(){
-        //     console.log(data)
-        // }
+
     }
 
     const handleValidation = () => {
@@ -38,11 +37,11 @@ export default function LoginScreen() {
     }
 
   return (
+    <Container>
     <KeyboardAvoidingView 
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
-        style={[container, content, {
-            marginBottom: 100,
-            
+        style={[content, {
+            marginTop: -200,
         }]}
     >
         <TouchableWithoutFeedback onPress={()=> { Keyboard.dismiss() }} style={[container,{
@@ -75,5 +74,6 @@ export default function LoginScreen() {
             </View>
         </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
+    </Container>
   )
 }
